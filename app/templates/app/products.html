@@ -1,0 +1,25 @@
+{% extends "app/index.html" %}
+{% load static %}
+{% block CONTENIDO %}
+
+<h2>Lista de Productos</h2>
+<a class="card_custom" href="{% url 'ProductsForms' %}">Cargar nuevo producto</a>
+<hr></hr>
+<ul>
+    {% for product in products %}
+        <li>
+            Objeto: {{product.product_name}}<br>
+            Numero de serie: {{product.serial}}<br>
+            Disponible: 
+                {% if product.availability %}
+                    Si
+                {% else %}
+                    No
+                {% endif %}
+                <br><br>
+            --
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

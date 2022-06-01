@@ -1,0 +1,15 @@
+{% extends "app/index.html" %}
+{% load static %}
+{% block CONTENIDO %}
+
+<h2>Buscador</h2>
+<hr></hr>
+
+<form action="app/search" method="GET">
+    <div>
+        <input type="text" name="all_search" id="staff_project_product" placeholder="Escriba aqui...">
+        <input type="submit" value="Buscar">
+    </div>
+</form>
+
+{% endblock %}

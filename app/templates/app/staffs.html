@@ -1,0 +1,21 @@
+{% extends "app/index.html" %}
+{% load static %}
+{% block CONTENIDO %}
+
+<h2>Listado del Personal</h2>
+<a class="card_custom" href="{% url 'StaffsForms' %}">Cargar nuevo personal</a>
+<hr></hr>
+<ul>
+    {% for staff in staffs %}
+        <li>
+            Nombre: {{staff.name}} {{staff.last_name}}<br>
+            Posicion: {{staff.position}}<br>
+            Rango: {{staff.rank}}<br>
+            Ingreso: {{staff.since}}<br>
+            Contacto: {{staff.email}}<br><br>
+            --
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
